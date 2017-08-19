@@ -1,0 +1,8 @@
+
+// ... takes a comma sep list of args and bundles it in an array
+export const partial = (fn, ...args) => fn.bind(null, ...args)
+
+export const _pipe = (f, g) => (...args) => g(f(...args))
+
+export const pipe = (...fns) => fns.reduce(_pipe)
+
